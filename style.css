@@ -1,0 +1,217 @@
+/* En-tête */
+header {
+    display: flex;
+    align-items: center;
+    background-color: #637979;
+    padding: 30px 30px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 2px solid black;
+}
+
+.logo {
+    height: 130px;
+    margin-right: 15px;
+}
+
+
+header h1 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 3rem;
+    font-weight: 100;
+}
+
+body {
+    margin: 0;
+    background-color: #ffffff;
+    padding: 50px;
+    font-size: 4rem;
+    border-right: 100px solid #ffffff;
+    border-left: 100px solid #ffffff;
+    box-sizing: border-box;
+}
+
+body h2 {
+    font-weight: bold;
+}
+
+/* Best movie */
+.bestmovie {
+    font-size: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 6px solid black;
+    padding: 20px;
+    margin-right: 20;
+    position: relative;
+}
+
+.movie-info {
+    padding-top: 0;
+    padding-left: 40px;
+    padding-right: 20px;
+}
+
+.movie-info h3 {
+    margin: 0;
+    font-size: 2em;
+    padding: 20px;
+}
+
+.movie-info p {
+    font-size: 1em;
+    padding: 20px;
+    max-width: 90%;
+}
+
+.button_détails1 {
+    position: absolute;
+    right: 150px;
+    bottom: 40px;
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 30px 60px;
+    font-size: 2rem;
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.button_détails1:hover {
+    /* Effet survol */
+    background-color: darkred;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Catégories films */
+.movie-category h2 {
+    margin: 20px 0;
+    font-size: 6rem;
+}
+
+.movie-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-around;
+}
+
+.movie-card {
+    position: relative;
+    width: calc(33.333% - 20px);
+    margin-bottom: 20px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.movie-card img {
+    width: 60%;
+    display: block;
+    object-fit: cover;
+    height: auto;
+    margin: 0 auto;
+}
+
+.movie-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    right: 0;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    height: 100%;
+    width: 60%;
+    display: flex;
+    flex-direction: flex;
+    align-items: center;
+    text-align: left;
+    /* centrage bouton  et texte*/
+}
+
+.button-details {
+    background-color: #383838;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 480px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .logo {
+        margin-bottom: 10px;
+    }
+
+    .header-text h1 {
+        font-size: 1.2rem;
+    }
+
+    .header-text p {
+        font-size: 0.9rem;
+    }
+
+
+    .movie-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .movie-card {
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .movie-container {
+        flex-direction: column;
+    }
+
+    .movie-card {
+        width: calc(50% - 20px);
+    }
+
+    .movie-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Style desktops */
+@media (min-width: 1024px) {
+    .movie-card {
+        width: calc(33.333% - 20px);
+    }
+}
