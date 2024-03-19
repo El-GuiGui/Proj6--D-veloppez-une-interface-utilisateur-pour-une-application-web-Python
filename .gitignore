@@ -1,0 +1,16 @@
+# Ignore directories
+__pycache__/
+autres/
+env/
+
+# Ignore all .py files
+*.py
+
+# not ignore home.html
+!home.html
+
+# not ignore specific files
+!.gitignore
+!instruction_project.md
+!README.md
+!requirements.txt
