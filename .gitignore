@@ -3,6 +3,7 @@ __pycache__/
 autres/
 env/
 OCMovies-API-EN-FR/
+pyproject.toml
 
 # Ignore all .py files
 *.py
