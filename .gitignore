@@ -2,6 +2,7 @@
 __pycache__/
 autres/
 env/
+OCMovies-API-EN-FR/
 
 # Ignore all .py files
 *.py
