@@ -143,6 +143,7 @@ document.querySelectorAll('.movie-grid').forEach(movieGrid => {
 });
 
 
+
 // Load ALL catégories
 async function loadMoviesForAllCategories() {
     // Sélectionne toutes les sections 'movie-category' de l'HTML
@@ -160,6 +161,8 @@ async function loadMoviesForAllCategories() {
         await loadMoviesByCategory(genre, categoryElement.querySelector(gridSelector));
     });
 }
+
+
 
 
 
@@ -192,23 +195,6 @@ async function loadAndDisplayMovieDetails(movieId) {
         console.log('Erreur lors du chargement des détails de ce film:', error);
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 // Catégories libres / autres 
