@@ -253,6 +253,9 @@ document.addEventListener("DOMContentLoaded", function () {
         btn.style.borderRadius = '20px';
         btn.style.border = 'none';
 
+
+
+
         let isExpanded = false;
         btn.addEventListener('click', () => {
             isExpanded = !isExpanded;
