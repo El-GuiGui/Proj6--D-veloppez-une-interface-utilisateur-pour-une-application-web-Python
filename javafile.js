@@ -53,25 +53,17 @@ async function loadBestMovie() {
         document.querySelector('#best-movie .movie-info p').textContent = bestMovieDetails.description; // Assurez-vous que la description est disponible
         document.querySelector('#best-movie img').src = bestMovieDetails.image_url;
 
+        const bestMovieDetailButton = document.querySelector('#best-movie .button_détails1');
+        if (bestMovieDetailButton) {
+            bestMovieDetailButton.onclick = function () {
+                loadAndDisplayMovieDetails(bestMovie.id);
+            };
+        }
+
     } catch (error) {
         console.log('Erreur lors du chargement du meilleur film:', error);
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // Catégorie choisi
 // Load catégories
@@ -187,7 +179,13 @@ async function loadAndDisplayMovieDetails(movieId) {
         modal.querySelector('.modal-country').textContent = `(${movieDetails.countries.join(', ')})`;
         modal.querySelector('.modal-box-office').textContent = `Recettes: ${movieDetails.worldwide_gross_income}`;
 
-
+        const defaultModalImage = 'images/image_non_disponible3.png'; // Chemin de votre image par défaut
+        const modalImage = modal.querySelector('.modal-image');
+        // Utilise l'image par défaut si aucune image ne charge depuis l'API
+        modalImage.src = movieDetails.image_url || defaultModalImage;
+        modalImage.onerror = function () {
+            this.src = defaultModalImage;
+        };
 
         // Afficher le modal
         modal.style.display = "block";
@@ -239,12 +237,45 @@ async function loadGenres() {
 }
 
 
+// Pour bouton "voir plus" et "voir moins" 
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll('.movie-category').forEach(category => {
+        const grid = category.querySelector('.movie-grid');
+        const btn = document.createElement('button');
+        btn.className = 'toggle-more-btn'; // Ajoute une classe pour le ciblage CSS
+        btn.innerText = 'Voir plus';
+        btn.style.backgroundColor = 'red';
+        btn.style.color = 'white';
+        btn.style.padding = '10px 40px';
+        btn.style.margin = '20px auto';
+        btn.style.display = 'block';
+        btn.style.cursor = 'pointer';
+        btn.style.borderRadius = '20px';
+        btn.style.border = 'none';
+
+        let isExpanded = false;
+        btn.addEventListener('click', () => {
+            isExpanded = !isExpanded;
+            btn.innerText = isExpanded ? 'Voir moins' : 'Voir plus';
+            grid.querySelectorAll('.movie-card:nth-of-type(n+3)').forEach((card, index) => {
+                card.style.display = isExpanded ? 'block' : 'none';
+            });
+        });
+
+        // Initialement, cache tous sauf les deux premiers films
+        grid.querySelectorAll('.movie-card:nth-of-type(n+3)').forEach(card => {
+            card.style.display = 'none';
+        });
+
+        category.appendChild(btn);
+    });
+});
 
 
 
 
 
-
+// Load content bas de page ...
 document.getElementById('category-select1').addEventListener('change', function () {
     const genre = this.value;
     loadMoviesByCategory(genre, '.movie-category[data-genre="custom1"] .movie-grid');
