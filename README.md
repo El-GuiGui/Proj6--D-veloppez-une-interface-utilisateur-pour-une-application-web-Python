@@ -67,3 +67,15 @@ Vous pouvez les ajouter directement à la racine du dossier : ocmovies-api-fr o
 Une fois fait et le serveur près, il suffit simplement d'ouvrir le fichier HTML dans n'importe quel navigateur. 
 
 La mise en œuvre est simple, le style est automatiquement appliqué avec le css et la communication avec l'api se fait avec le fichier JS.
+
+## Note :
+Je rajoute ici les rapports du validateur en ligne w3C pour certifier la qualité du code.
+- https://validator.w3.org/
+
+![image](https://github.com/El-GuiGui/Proj6--Developpez-une-interface-utilisateur-pour-une-application-web-Python/assets/148984263/5afbf476-868d-4749-9c43-0a47d882b88f)
+
+- https://jigsaw.w3.org/css-validator/validator
+
+![image](https://github.com/El-GuiGui/Proj6--Developpez-une-interface-utilisateur-pour-une-application-web-Python/assets/148984263/0ab9d1fd-db90-48ba-972b-33401ec7077b)
+
+
